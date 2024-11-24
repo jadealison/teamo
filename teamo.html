@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Ti, Mi Amor</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffd1dc);
+      font-family: "Georgia", serif;
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      color: #fff;
+      position: relative;
+    }
+
+    .initials {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .initials span {
+      font-size: 22px;
+    }
+
+    .heart {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      width: 80px;
+      height: 80px;
+      background-color: #ff4b5c;
+      transform: rotate(-45deg);
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background-color: #ff4b5c;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -40px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 40px;
+      top: 0;
+    }
+
+    .poem {
+      margin-top: 120px;
+      font-size: 20px;
+      font-style: italic;
+      text-align: justify;
+      color: #fdfdfd;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      text-align: center;
+    }
+
+    .main-photo {
+      width: 250px;
+      height: 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .main-photo:hover {
+      transform: scale(1.1);
+    }
+
+    .photo-thumbnails {
+      margin-top: 10px;
+      display: none;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .photo-thumbnails img {
+      width: 90px;
+      height: 80px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .photo-thumbnails img:hover {
+      transform: scale(1.1);
+    }
+
+    .show-thumbnails .photo-thumbnails {
+      display: flex;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1) rotate(-45deg);
+      }
+      50% {
+        transform: scale(1.1) rotate(-45deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="initials">
+      <span>💖</span> J & A
+    </div>
+    <div class="heart"></div>
+    <div class="poem">
+      Eres mi sol, mi luna y mi estrella,<br>
+      el latir que llena mi corazón.<br>
+      En tus ojos encuentro la belleza,<br>
+      en tu abrazo, mi hogar y mi razón.<br><br>
+      
+      Cada día contigo es un regalo,<br>
+      cada risa, un dulce amanecer.<br>
+      Soy tan afortunada de tenerte,<br>
+      mi amor, mi refugio, mi querer.<br><br>
+      
+      Que este amor nunca deje de crecer,<br>
+      que los sueños juntos podamos vivir.<br>
+      Eres mi todo, mi único deseo,<br>
+      contigo siempre quiero existir.
+    </div>
+    <div class="gallery">
+      <img src="\Users\luis-\OneDrive\random\muak.jpg" class="main-photo" alt="Foto principal" onclick="toggleGallery()">
+      <div class="photo-thumbnails">
+        <img src="\Users\luis-\OneDrive\random\IMG-20240226-WA0000.jpg" alt="Foto 1" height="90" width="80">
+        <img src="\Users\luis-\OneDrive\random\IMG_20241003_065858_439.webp" alt="Foto 2" height="90" width="80">
+        <img src="\Users\luis-\OneDrive\random\20231119_190120.jpg"alt="Foto 3" height="90" width="80">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleGallery() {
+      const gallery = document.querySelector('.gallery');
+      gallery.classList.toggle('show-thumbnails');
+    }
+  </script>
+</body>
+</html>
